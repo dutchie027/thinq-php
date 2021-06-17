@@ -1,0 +1,27 @@
+{
+    "name": "dutchie027/thinq",
+    "description": "Thinq PHP API",
+    "keywords": ["php", "automation", "Thinq", "paas", "headless", "sms", "server administration"],
+    "type": "library",
+    "require": {
+        "monolog/monolog": "^2.2",
+        "guzzlehttp/guzzle": "^7.2",
+        "aws/aws-sdk-php": "^3.171",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "dutchie027\\Thinq\\": "src/"
+        }
+    },
+    "support": {
+        "forum": "https://github.com/dutchie027/thinq-php/discussions",
+        "issues": "https://github.com/dutchie027/thinq-php/issues",
+        "source": "https://github.com/dutchie027/thinq-php/tree/main"
+    },
+    "license": "MIT",
+    "authors": [{
+        "name": "Justin Rodino",
+        "email": "justin@227volts.com"
+    }]
+}
