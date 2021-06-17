@@ -9,7 +9,7 @@ PHP Library Intended to Interact with [Thinq's API](https://apidocs.thinq.com/)
 
 ## Installation
 ```php
-composer require dutchie027/Thinq
+composer require dutchie027/thinq
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ composer require dutchie027/Thinq
 require_once ('vendor/autoload.php');
 
 //make the connction to the API for use
-$api = new dutchie027\Thinq\API(THINQ_USER, THINK_TOKEN);
+$api = new dutchie027\Thinq\API(THINQ_USER, THINQ_TOKEN);
 
 ...
 ```
@@ -49,7 +49,7 @@ Once you have a user and token, you can simply connect with it or you can add op
 require_once ('vendor/autoload.php');
 
 // Instantiate with defaults
-$api = new dutchie027\Thinq\API(THINQ_USER, THINK_TOKEN);
+$api = new dutchie027\Thinq\API(THINQ_USER, THINQ_TOKEN);
 
 // Instantiate without defaults, this allows you to change things
 // like log location, directory, the tag and possible future settings.
@@ -60,7 +60,7 @@ $settings = [
 	'log_level' => 'error'
 ];
 
-$api = new dutchie027\Thinq\API(THINQ_USER, THINK_TOKEN, $settings);
+$api = new dutchie027\Thinq\API(THINQ_USER, THINQ_TOKEN, $settings);
 ```
 
 #### Settings
