@@ -8,11 +8,13 @@
 PHP Library Intended to Interact with [Thinq's API](https://apidocs.thinq.com/)
 
 ## Installation
+
 ```php
 composer require dutchie027/thinq
 ```
 
 ## Usage
+
 ```php
 // require the composer library
 require_once ('vendor/autoload.php');
@@ -66,10 +68,10 @@ $api = new dutchie027\Thinq\API(THINQ_USER, THINQ_TOKEN);
 // Instantiate without defaults, this allows you to change things
 // like log location, directory, the tag and possible future settings.
 $settings = [
-	'log_dir' => '/tmp',
-	'log_name' => 'thinqi',
-	'log_tag' => 'thinq-api',
-	'log_level' => 'error'
+  'log_dir' => '/tmp',
+  'log_name' => 'thinqi',
+  'log_tag' => 'thinq-api',
+  'log_level' => 'error'
 ];
 
 $api = new dutchie027\Thinq\API(THINQ_USER, THINQ_TOKEN, $settings);
@@ -77,14 +79,14 @@ $api = new dutchie027\Thinq\API(THINQ_USER, THINQ_TOKEN, $settings);
 
 #### Settings
 
-The default settings are fine, however you might want to override the defaults or use your own.**NOTE: All settings are optional and you don't need to provide any**. 
+The default settings are fine, however you might want to override the defaults or use your own.**NOTE: All settings are optional and you don't need to provide any**.
 
-Field | Type | Description | Default Value
------ | ---- | ----------- | -------------
-`log_dir` | string | The directory where the log file is stored | [sys_get_temp_dir()](https://www.php.net/manual/en/function.sys-get-temp-dir.php)
-`log_name` | string | The name of the log file that is created in `log_dir`. If you don't put .log at the end, it will append it | 6 random characters + [time()](https://www.php.net/manual/en/function.time.php) + .log 
-`log_tag` | string | If you share this log file with other applications, this is the tag used in the log file | `thinq`
-`log_level` | string | The level of logging the application will do. This must be either `debug`, `info`, `notice`, `warning`, `critical` or `error`. If it is not one of those values it will fail to the default | `warning`
+| Field       | Type   | Description                                                                                                                                                                                 | Default Value                                                                          |
+| ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `log_dir`   | string | The directory where the log file is stored                                                                                                                                                  | [sys_get_temp_dir()](https://www.php.net/manual/en/function.sys-get-temp-dir.php)      |
+| `log_name`  | string | The name of the log file that is created in `log_dir`. If you don't put .log at the end, it will append it                                                                                  | 6 random characters + [time()](https://www.php.net/manual/en/function.time.php) + .log |
+| `log_tag`   | string | If you share this log file with other applications, this is the tag used in the log file                                                                                                    | `thinq`                                                                                |
+| `log_level` | string | The level of logging the application will do. This must be either `debug`, `info`, `notice`, `warning`, `critical` or `error`. If it is not one of those values it will fail to the default | `warning`                                                                              |
 
 ## To-Do
 
