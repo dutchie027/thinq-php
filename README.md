@@ -23,6 +23,18 @@ $api = new dutchie027\Thinq\API(THINQ_USER, THINQ_TOKEN);
 ...
 ```
 
+## Requirements
+
+The libarary assumes you have three defined variables:
+
+```php
+define ('THINQ_USER', 'myUserName');
+define ('THINQ_TOKEN', '867530986753098675309');
+define ('THINQ_ACCOUNT_ID', '12345678');
+```
+
+in order to work properly. `THINQ_USER` and `THINQ_TOKEN` are fed to the API as parameters for login and header information. `THINQ_ACCOUNT_ID` is used in making URLs on the back end. These constants can be defined in your script or they can be imported or included in a constant file (preferred).
+
 ## General Information
 
 ### Class Listing
