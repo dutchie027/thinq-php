@@ -38,6 +38,14 @@ class API
      */
     protected const API_URL = 'https://api.thinq.com';
 
+    public const SEND_SMS_URL = self::API_URL . '/account/' . THINQ_ACCOUNT_ID . '/product/origination/sms/send';
+
+    /**
+     * API Token
+     *
+     * @var string
+     */
+    protected $p_account;
 
     /**
      * API Token
@@ -98,11 +106,12 @@ class API
     /**
      * Default constructor
      */
-    public function __construct($user, $token, array $attributes = [], Guzzle $guzzle = null)
+    public function __construct($user, $token, $account, array $attributes = [], Guzzle $guzzle = null)
     {
         $tokenString = $user . ":" . $token;
         $base64 = base64_encode($tokenString);
         $this->p_token = $base64;
+        $this->p_account = $account;
         if (isset($attributes['log_dir']) && is_dir($attributes['log_dir'])) {
             $this->p_log_location = $attributes['log_dir'];
         } else {
@@ -332,7 +341,7 @@ class API
                 $ja = json_decode($response->getBody()->getContents(), true);
                 throw new ThinqAPIRequestException('An error occurred while performing the request to ' . $url . ' -> ' . (isset($ja['error']) ? $ja['error'] : json_encode($ja)));
             }
-            throw new ThinqAPIRequestException(('An unknown error ocurred while performing the request to ' . $url));
+            throw new ThinqAPIRequestException('An unknown error ocurred while performing the request to ' . $url);
         }
     }
 }

@@ -28,4 +28,13 @@ class Text
     {
         $this->api = $api;
     }
+
+    public function sendText($to, $from, $message)
+    {
+        $array['from_did'] = $from;
+        $array['to_did'] = $to;
+        $array['message'] = $message;
+        $body = json_encode($array);
+        return $this->api->makeAPICall('POST', $this->api::SEND_SMS_URL, $body);
+    }
 }
